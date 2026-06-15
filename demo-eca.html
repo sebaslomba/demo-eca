@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECA Odontología y Cirugía — Asunción, Paraguay</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #1A1A1A;
+  --bg2:     #222222;
+  --bg3:     #2A2A2A;
+  --bg4:     #333333;
+  --white:   #F5F5F5;
+  --white2:  #E0E0E0;
+  --muted:   #888888;
+  --muted2:  #AAAAAA;
+  --border:  rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.15);
+  --accent:  #FFFFFF;
+  --head:    'Inter', sans-serif;
+  --serif:   'Cormorant Garamond', Georgia, serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--white); font-family: var(--head); overflow-x: hidden; line-height: 1.6; font-weight: 300; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0 3rem; height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(26,26,26,0.95); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { text-decoration: none; display: flex; flex-direction: column; }
+.nav-logo-main {
+  font-family: var(--serif); font-size: 1.3rem; font-weight: 600;
+  color: var(--white); letter-spacing: 2px; line-height: 1;
+}
+.nav-logo-sub { font-size: 9px; color: var(--muted); letter-spacing: 3.5px; text-transform: uppercase; margin-top: 2px; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a { color: var(--muted); font-size: 13px; text-decoration: none; transition: color .2s; letter-spacing: .3px; font-weight: 400; }
+.nav-links a:hover { color: var(--white); }
+.nav-cta {
+  padding: 9px 22px; border-radius: 4px;
+  background: var(--white); color: var(--bg);
+  font-size: 13px; font-weight: 500; text-decoration: none;
+  transition: background .2s, transform .15s; letter-spacing: .3px;
+}
+.nav-cta:hover { background: var(--white2); transform: translateY(-1px); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh; display: flex; align-items: center;
+  padding: 7rem 3rem 4rem; position: relative; overflow: hidden;
+}
+/* Subtle texture */
+.hero::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+/* Single diagonal accent line */
+.hero-line {
+  position: absolute; z-index: 0;
+  width: 1px; height: 60%;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.08), transparent);
+  left: 50%; top: 20%;
+}
+
+.hero-inner {
+  max-width: 1160px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: 5rem;
+  align-items: center; position: relative; z-index: 1;
+}
+
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 2rem; font-weight: 400;
+}
+.eyebrow-line { width: 32px; height: 1px; background: var(--muted); }
+
+h1 {
+  font-family: var(--serif);
+  font-size: clamp(3rem, 5.5vw, 5rem);
+  font-weight: 400; line-height: 1.05;
+  letter-spacing: -1px; color: var(--white);
+  margin-bottom: 1.75rem;
+}
+h1 em { font-style: italic; color: var(--muted2); }
+
+.hero-desc {
+  font-size: .95rem; color: var(--muted); line-height: 1.8;
+  max-width: 420px; margin-bottom: 2.5rem; font-weight: 300;
+}
+
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 3.5rem; }
+.btn-main {
+  padding: 13px 32px; border-radius: 4px;
+  background: var(--white); color: var(--bg);
+  font-size: 13px; font-weight: 500; text-decoration: none;
+  transition: background .2s, transform .15s; letter-spacing: .3px;
+}
+.btn-main:hover { background: var(--white2); transform: translateY(-2px); }
+.btn-ghost {
+  padding: 13px 32px; border-radius: 4px;
+  background: transparent; color: var(--white2);
+  font-size: 13px; font-weight: 400; text-decoration: none;
+  border: 1px solid var(--border2);
+  transition: border-color .2s, background .2s, transform .15s;
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.04); transform: translateY(-2px); }
+
+.hero-stats { display: flex; gap: 2.5rem; }
+.hstat { border-left: 1px solid var(--border2); padding-left: 1.25rem; }
+.hstat-num { font-family: var(--serif); font-size: 2.2rem; font-weight: 600; color: var(--white); line-height: 1; }
+.hstat-lbl { font-size: 11px; color: var(--muted); margin-top: 4px; letter-spacing: .3px; }
+
+/* Hero right — minimal card stack */
+.hero-right { display: flex; flex-direction: column; gap: 1px; }
+
+.hr-header {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 8px 8px 0 0; padding: 1rem 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.hr-title { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
+.hr-badge {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 10px; color: var(--muted2); letter-spacing: 1px;
+}
+.badge-dot { width: 5px; height: 5px; border-radius: 50%; background: #6EE7B7; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+.hr-services { background: var(--bg2); border: 1px solid var(--border); border-top: none; }
+.hr-svc {
+  display: flex; align-items: center; gap: 14px;
+  padding: 1rem 1.5rem; border-bottom: 1px solid var(--border);
+  transition: background .2s;
+}
+.hr-svc:last-child { border-bottom: none; }
+.hr-svc:hover { background: var(--bg3); }
+.hr-svc-num { font-family: var(--serif); font-size: 11px; color: var(--muted); width: 20px; flex-shrink: 0; }
+.hr-svc-name { font-size: 13px; color: var(--white2); font-weight: 400; flex: 1; }
+.hr-svc-tag { font-size: 10px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+
+.hr-footer {
+  background: var(--bg3); border: 1px solid var(--border); border-top: none;
+  border-radius: 0 0 8px 8px; padding: 1rem 1.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.hr-addr { font-size: 11px; color: var(--muted); line-height: 1.5; }
+.hr-addr strong { color: var(--white2); display: block; font-weight: 500; font-size: 12px; }
+.hr-wa {
+  font-size: 11px; padding: 7px 14px; border-radius: 4px;
+  border: 1px solid var(--border2); color: var(--white2);
+  text-decoration: none; transition: background .2s, border-color .2s;
+  letter-spacing: .5px;
+}
+.hr-wa:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.25); }
+
+/* ── SECTION BASE ── */
+section { position: relative; }
+.inner { max-width: 1160px; margin: 0 auto; padding: 6rem 3rem; }
+.s-eyebrow {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 1rem; font-weight: 400;
+}
+.s-line { width: 24px; height: 1px; background: var(--muted); }
+h2 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 400; letter-spacing: -0.5px;
+  color: var(--white); margin-bottom: 1rem; line-height: 1.15;
+}
+h2 em { font-style: italic; color: var(--muted2); }
+.sdesc { color: var(--muted); font-size: .9rem; max-width: 440px; margin-bottom: 3rem; line-height: 1.8; font-weight: 300; }
+
+/* ── SERVICES ── */
+.svc-section { background: var(--bg2); }
+.svc-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+}
+.svc-cell {
+  padding: 2.5rem 2rem; border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  transition: background .2s; position: relative;
+}
+.svc-cell:nth-child(3n) { border-right: none; }
+.svc-cell:nth-child(4), .svc-cell:nth-child(5), .svc-cell:nth-child(6) { border-bottom: none; }
+.svc-cell:hover { background: var(--bg3); }
+.svc-n { font-family: var(--serif); font-size: 2.5rem; font-weight: 400; color: rgba(255,255,255,0.06); line-height: 1; margin-bottom: 1.25rem; }
+.svc-name { font-size: .95rem; font-weight: 500; color: var(--white); margin-bottom: .6rem; letter-spacing: .2px; }
+.svc-desc { font-size: 12.5px; color: var(--muted); line-height: 1.7; font-weight: 300; }
+.svc-tag { display: inline-block; margin-top: 1rem; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); border: 1px solid var(--border2); padding: 3px 10px; border-radius: 2px; }
+
+/* ── WHY ── */
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+
+.why-left-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 8px; overflow: hidden;
+}
+.wlc-top { padding: 2rem; border-bottom: 1px solid var(--border); }
+.wlc-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; }
+.wlc-quote {
+  font-family: var(--serif); font-size: 1.4rem; font-style: italic;
+  color: var(--white2); line-height: 1.5; font-weight: 400;
+}
+.wlc-items { padding: 1.5rem 2rem; display: flex; flex-direction: column; gap: 14px; }
+.wlc-item { display: flex; align-items: center; gap: 14px; }
+.wlc-bar-bg { flex: 1; height: 1px; background: var(--border); position: relative; }
+.wlc-bar { position: absolute; left: 0; top: 0; height: 1px; background: var(--white2); transition: width 1.5s ease; }
+.wlc-name { font-size: 12px; color: var(--muted2); width: 120px; flex-shrink: 0; }
+.wlc-pct { font-size: 11px; color: var(--muted); width: 32px; text-align: right; flex-shrink: 0; font-family: var(--serif); }
+.wlc-bottom {
+  padding: 1.25rem 2rem; border-top: 1px solid var(--border);
+  display: flex; gap: 2rem;
+}
+.wlc-stat-num { font-family: var(--serif); font-size: 1.6rem; font-weight: 600; color: var(--white); }
+.wlc-stat-lbl { font-size: 10px; color: var(--muted); margin-top: 2px; letter-spacing: .5px; }
+
+.why-right .sdesc { margin-bottom: 2rem; }
+.why-points { display: flex; flex-direction: column; gap: 1.5rem; }
+.why-pt { display: flex; gap: 16px; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+.why-pt:last-child { border-bottom: none; padding-bottom: 0; }
+.why-pt-num { font-family: var(--serif); font-size: 1.1rem; color: var(--muted); flex-shrink: 0; padding-top: 1px; }
+.why-pt-title { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 4px; letter-spacing: .2px; }
+.why-pt-sub { font-size: 12.5px; color: var(--muted); line-height: 1.7; font-weight: 300; }
+
+/* ── TESTIMONIALS ── */
+.test-bg { background: var(--bg2); }
+.test-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border-radius: 8px; overflow: hidden; }
+.test-card { background: var(--bg2); padding: 2rem; transition: background .2s; }
+.test-card:hover { background: var(--bg3); }
+.test-stars { display: flex; gap: 3px; margin-bottom: 1.25rem; }
+.star { color: var(--muted2); font-size: 11px; }
+.test-text { font-size: 13px; color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem; font-weight: 300; font-style: italic; }
+.test-author { display: flex; align-items: center; gap: 12px; }
+.test-av {
+  width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+  background: var(--bg4); border: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 12px; color: var(--muted2);
+}
+.test-name { font-size: 13px; font-weight: 500; color: var(--white2); }
+.test-role { font-size: 10px; color: var(--muted); margin-top: 2px; letter-spacing: .5px; }
+
+/* ── APPOINTMENT ── */
+.appt-inner {
+  max-width: 1160px; margin: 0 auto; padding: 6rem 3rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+}
+.appt-left .sdesc { margin-bottom: 2rem; }
+.contact-items { display: flex; flex-direction: column; gap: 1px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.ci {
+  display: flex; align-items: flex-start; gap: 14px;
+  background: var(--bg2); padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid var(--border); transition: background .2s;
+}
+.ci:last-child { border-bottom: none; }
+.ci:hover { background: var(--bg3); }
+.ci-ico { color: var(--muted); flex-shrink: 0; margin-top: 1px; }
+.ci-text { font-size: 13px; color: var(--white2); font-weight: 400; }
+.ci-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+.appt-form {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 2.5rem;
+}
+.form-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: var(--white); margin-bottom: .3rem; }
+.form-sub { font-size: 12px; color: var(--muted); margin-bottom: 1.75rem; letter-spacing: .3px; }
+.fg { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
+.fg label { font-size: 10px; color: var(--muted); font-weight: 500; letter-spacing: 2px; text-transform: uppercase; }
+.fg input, .fg select {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 4px; padding: 11px 14px;
+  color: var(--white); font-family: var(--head); font-size: 13px;
+  outline: none; transition: border-color .2s; width: 100%;
+  appearance: none; font-weight: 300;
+}
+.fg input::placeholder { color: var(--muted); }
+.fg input:focus, .fg select:focus { border-color: var(--border2); }
+.fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form-btn {
+  width: 100%; padding: 13px; border-radius: 4px;
+  background: var(--white); color: var(--bg); border: none;
+  font-family: var(--head); font-size: 13px; font-weight: 500;
+  cursor: pointer; margin-top: 6px; letter-spacing: .5px;
+  transition: background .2s, transform .15s;
+}
+.form-btn:hover { background: var(--white2); transform: translateY(-1px); }
+.form-note { font-size: 11px; color: var(--muted); text-align: center; margin-top: 10px; letter-spacing: .3px; }
+
+/* ── FOOTER ── */
+.footer { border-top: 1px solid var(--border); }
+.footer-inner { max-width: 1160px; margin: 0 auto; padding: 3.5rem 3rem 2rem; }
+.footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.footer-logo { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--white); letter-spacing: 2px; margin-bottom: .25rem; }
+.footer-logo-sub { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+.footer-desc { font-size: 12px; color: var(--muted); line-height: 1.75; font-weight: 300; }
+.footer-col-title { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted2); margin-bottom: 1.25rem; font-weight: 500; }
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color .2s; font-weight: 300; }
+.footer-links a:hover { color: var(--white2); }
+.footer-bottom { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); flex-wrap: wrap; gap: 1rem; letter-spacing: .3px; }
+.footer-bottom a { color: var(--muted2); text-decoration: none; }
+.footer-bottom a:hover { color: var(--white); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+.hero-left > * { animation: fadeUp .55s ease both; }
+.hero-left > *:nth-child(1){animation-delay:.05s}
+.hero-left > *:nth-child(2){animation-delay:.1s}
+.hero-left > *:nth-child(3){animation-delay:.15s}
+.hero-left > *:nth-child(4){animation-delay:.2s}
+.hero-left > *:nth-child(5){animation-delay:.25s}
+.hero-right { animation: fadeUp .55s .3s ease both; }
+
+.reveal { opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
+.reveal.vis { opacity:1; transform:translateY(0); }
+.reveal-d1 { transition-delay:.1s; }
+.reveal-d2 { transition-delay:.2s; }
+
+/* ── MOBILE ── */
+@media(max-width:900px){
+  nav { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+  .hero, .inner { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .hero-inner, .why-grid, .appt-inner, .footer-top { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .svc-grid { grid-template-columns: 1fr; }
+  .test-grid { grid-template-columns: 1fr; gap: 0; }
+  .fg-row { grid-template-columns: 1fr; }
+  .svc-cell { border-right: none; border-bottom: 1px solid var(--border); }
+  .svc-cell:last-child { border-bottom: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-main">ECA</div>
+    <div class="nav-logo-sub">Odontología & Cirugía</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#testimonios">Pacientes</a></li>
+    <li><a href="#turno">Contacto</a></li>
+  </ul>
+  <a href="#turno" class="nav-cta">Reservar turno</a>
+</nav>
+
+<!-- HERO -->
+<section>
+  <div class="hero-line"></div>
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-line"></span>
+          Asunción, Paraguay
+        </div>
+        <h1>Odontología.<br><em>Con criterio.</em></h1>
+        <p class="hero-desc">Cirugía bucal y odontología general con diagnóstico preciso y atención personalizada. Sin apuro, sin excesos — el tratamiento que necesitás y nada más.</p>
+        <div class="hero-btns">
+          <a href="#turno" class="btn-main">Reservar turno</a>
+          <a href="#servicios" class="btn-ghost">Ver servicios</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hstat">
+            <div class="hstat-num">8+</div>
+            <div class="hstat-lbl">Años de experiencia</div>
+          </div>
+          <div class="hstat">
+            <div class="hstat-num">1.800+</div>
+            <div class="hstat-lbl">Pacientes atendidos</div>
+          </div>
+          <div class="hstat">
+            <div class="hstat-num">Tarde</div>
+            <div class="hstat-lbl">Lun–Sáb disponible</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hr-header">
+          <div class="hr-title">Servicios disponibles</div>
+          <div class="hr-badge"><span class="badge-dot"></span>Atendiendo hoy</div>
+        </div>
+        <div class="hr-services">
+          <div class="hr-svc">
+            <div class="hr-svc-num">01</div>
+            <div class="hr-svc-name">Cirugía Bucal</div>
+            <div class="hr-svc-tag">Especialidad</div>
+          </div>
+          <div class="hr-svc">
+            <div class="hr-svc-num">02</div>
+            <div class="hr-svc-name">Extracciones · Muelas del juicio</div>
+            <div class="hr-svc-tag">Cirugía</div>
+          </div>
+          <div class="hr-svc">
+            <div class="hr-svc-num">03</div>
+            <div class="hr-svc-name">Blanqueamiento · Estética</div>
+            <div class="hr-svc-tag">Estética</div>
+          </div>
+          <div class="hr-svc">
+            <div class="hr-svc-num">04</div>
+            <div class="hr-svc-name">Endodoncia · Conductos</div>
+            <div class="hr-svc-tag">General</div>
+          </div>
+          <div class="hr-svc">
+            <div class="hr-svc-num">05</div>
+            <div class="hr-svc-name">Implantes Dentales</div>
+            <div class="hr-svc-tag">Rehabilitación</div>
+          </div>
+        </div>
+        <div class="hr-footer">
+          <div class="hr-addr">
+            <strong>+595 972 219 507</strong>
+            Ten. José Felix Lopez, Asunción
+          </div>
+          <a href="https://wa.me/595972219507" class="hr-wa" target="_blank">WhatsApp →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicios" class="svc-section">
+  <div class="inner">
+    <div class="reveal">
+      <div class="s-eyebrow"><span class="s-line"></span>Especialidades</div>
+      <h2>Lo que <em>tratamos</em></h2>
+      <p class="sdesc">Cobertura completa en odontología general y cirugía. Cada caso tratado con el tiempo y la atención que merece.</p>
+    </div>
+    <div class="svc-grid reveal">
+      <div class="svc-cell">
+        <div class="svc-n">01</div>
+        <div class="svc-name">Cirugía Bucal</div>
+        <div class="svc-desc">Extracciones simples y complejas, terceros molares, frenectomías y procedimientos quirúrgicos con técnica depurada y recuperación rápida.</div>
+        <span class="svc-tag">Especialidad principal</span>
+      </div>
+      <div class="svc-cell">
+        <div class="svc-n">02</div>
+        <div class="svc-name">Estética Dental</div>
+        <div class="svc-desc">Blanqueamiento profesional, carillas y diseño de sonrisa. Resultados naturales, no exagerados — tu mejor versión sin artificios.</div>
+        <span class="svc-tag">Alta demanda</span>
+      </div>
+      <div class="svc-cell">
+        <div class="svc-n">03</div>
+        <div class="svc-name">Endodoncia</div>
+        <div class="svc-desc">Tratamiento de conducto para salvar tu diente natural. Técnicas modernas que eliminan el dolor y reducen los tiempos de recuperación.</div>
+        <span class="svc-tag">Sin dolor</span>
+      </div>
+      <div class="svc-cell">
+        <div class="svc-n">04</div>
+        <div class="svc-name">Implantes Dentales</div>
+        <div class="svc-desc">Rehabilitación oral completa con implantes de titanio. Función y estética restauradas de forma permanente.</div>
+        <span class="svc-tag">Permanente</span>
+      </div>
+      <div class="svc-cell">
+        <div class="svc-n">05</div>
+        <div class="svc-name">Odontología General</div>
+        <div class="svc-desc">Control rutinario, limpieza profesional, tratamiento de caries y obturaciones. La base de una boca sana a largo plazo.</div>
+        <span class="svc-tag">Preventivo</span>
+      </div>
+      <div class="svc-cell">
+        <div class="svc-n">06</div>
+        <div class="svc-name">Urgencias</div>
+        <div class="svc-desc">Atención el mismo día para emergencias. Dolor agudo, fracturas o infecciones — te atendemos sin lista de espera.</div>
+        <span class="svc-tag">Mismo día</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="nosotros">
+  <div class="inner">
+    <div class="why-grid">
+      <div class="why-left reveal">
+        <div class="why-left-card">
+          <div class="wlc-top">
+            <div class="wlc-label">Criterio clínico</div>
+            <div class="wlc-quote">"Tratamos lo que necesitás. Ni más, ni menos."</div>
+          </div>
+          <div class="wlc-items">
+            <div class="wlc-item">
+              <div class="wlc-name">Cirugía Bucal</div>
+              <div class="wlc-bar-bg"><div class="wlc-bar" style="width:96%"></div></div>
+              <div class="wlc-pct">96</div>
+            </div>
+            <div class="wlc-item">
+              <div class="wlc-name">Endodoncia</div>
+              <div class="wlc-bar-bg"><div class="wlc-bar" style="width:90%"></div></div>
+              <div class="wlc-pct">90</div>
+            </div>
+            <div class="wlc-item">
+              <div class="wlc-name">Estética Dental</div>
+              <div class="wlc-bar-bg"><div class="wlc-bar" style="width:87%"></div></div>
+              <div class="wlc-pct">87</div>
+            </div>
+            <div class="wlc-item">
+              <div class="wlc-name">Implantología</div>
+              <div class="wlc-bar-bg"><div class="wlc-bar" style="width:84%"></div></div>
+              <div class="wlc-pct">84</div>
+            </div>
+          </div>
+          <div class="wlc-bottom">
+            <div><div class="wlc-stat-num">8+</div><div class="wlc-stat-lbl">Años</div></div>
+            <div><div class="wlc-stat-num">1.800+</div><div class="wlc-stat-lbl">Pacientes</div></div>
+            <div><div class="wlc-stat-num">0</div><div class="wlc-stat-lbl">Lista de espera</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="why-right reveal reveal-d2">
+        <div class="s-eyebrow"><span class="s-line"></span>¿Por qué ECA?</div>
+        <h2>Precisión clínica,<br><em>trato humano</em></h2>
+        <p class="sdesc">No somos una cadena ni una franquicia. Somos un consultorio que atiende con criterio, donde cada paciente importa y cada tratamiento se piensa bien.</p>
+        <div class="why-points">
+          <div class="why-pt">
+            <div class="why-pt-num">01</div>
+            <div>
+              <div class="why-pt-title">Diagnóstico radiológico digital</div>
+              <div class="why-pt-sub">Radiografías digitales de alta precisión para ver exactamente lo que hay — sin suposiciones, sin tratamientos innecesarios.</div>
+            </div>
+          </div>
+          <div class="why-pt">
+            <div class="why-pt-num">02</div>
+            <div>
+              <div class="why-pt-title">Sin dolor, sin apuro</div>
+              <div class="why-pt-sub">Anestesia moderna y técnicas mínimamente invasivas. Cada procedimiento se hace con el tiempo necesario para que salga bien.</div>
+            </div>
+          </div>
+          <div class="why-pt">
+            <div class="why-pt-num">03</div>
+            <div>
+              <div class="why-pt-title">Turnos respetados</div>
+              <div class="why-pt-sub">Llegás a tu horario y te atendemos. Sin esperas innecesarias en la sala. Tu tiempo tiene el mismo valor que el nuestro.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonios" class="test-bg">
+  <div class="inner">
+    <div style="max-width:480px; margin-bottom:3.5rem" class="reveal">
+      <div class="s-eyebrow"><span class="s-line"></span>Pacientes</div>
+      <h2>Lo que dicen<br><em>quienes nos eligieron</em></h2>
+    </div>
+    <div class="test-grid reveal">
+      <div class="test-card">
+        <div class="test-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div class="test-text">Me sacaron una muela del juicio y no sentí absolutamente nada. El doctor te explica todo antes de empezar. El consultorio muy limpio y moderno.</div>
+        <div class="test-author">
+          <div class="test-av">AR</div>
+          <div><div class="test-name">Andrés R.</div><div class="test-role">Asunción</div></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div class="test-text">Fui por una urgencia un miércoles y me atendieron el mismo día. Rápido, sin espera y el tratamiento salió perfecto. Los recomiendo sin dudarlo.</div>
+        <div class="test-author">
+          <div class="test-av">VS</div>
+          <div><div class="test-name">Valeria S.</div><div class="test-role">Lambaré</div></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div class="test-text">Me hice el blanqueamiento y el resultado fue muy natural. Nada exagerado, muy accesible en precio comparado con otros lugares que consulté.</div>
+        <div class="test-author">
+          <div class="test-av">MG</div>
+          <div><div class="test-name">María G.</div><div class="test-role">Fernando de la Mora</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section id="turno">
+  <div class="appt-inner">
+    <div class="reveal">
+      <div class="s-eyebrow"><span class="s-line"></span>Reservas</div>
+      <h2>Agendá tu<br><em>turno</em></h2>
+      <p class="sdesc">Respondemos en menos de 2 horas. También podés escribirnos directo por WhatsApp.</p>
+      <div class="contact-items">
+        <div class="ci">
+          <div class="ci-ico">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="ci-text">Teniente José Felix Lopez</div>
+            <div class="ci-sub">Asunción, Paraguay</div>
+          </div>
+        </div>
+        <div class="ci">
+          <div class="ci-ico">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="ci-text">Lun–Jue 15:30–20:00 · Vie 15:00–19:00</div>
+            <div class="ci-sub">Sáb 16:00–19:00 · Dom cerrado</div>
+          </div>
+        </div>
+        <div class="ci">
+          <div class="ci-ico">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div>
+            <div class="ci-text">+595 972 219 507</div>
+            <div class="ci-sub">WhatsApp disponible</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal reveal-d2">
+      <div class="appt-form">
+        <div class="form-title">Reservar turno</div>
+        <div class="form-sub">Completá el formulario — te confirmamos por WhatsApp</div>
+        <div class="fg-row">
+          <div class="fg"><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>
+          <div class="fg"><label>Teléfono</label><input type="text" placeholder="+595 ..."></div>
+        </div>
+        <div class="fg">
+          <label>Tratamiento</label>
+          <select>
+            <option value="">Seleccioná un servicio</option>
+            <option>Consulta general</option>
+            <option>Cirugía Bucal</option>
+            <option>Extracción de muela del juicio</option>
+            <option>Blanqueamiento dental</option>
+            <option>Implantes dentales</option>
+            <option>Endodoncia</option>
+            <option>Urgencia dental</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="fg-row">
+          <div class="fg"><label>Fecha</label><input type="date"></div>
+          <div class="fg"><label>Horario</label>
+            <select>
+              <option>15:30 – 17:00</option>
+              <option>17:00 – 18:30</option>
+              <option>18:30 – 20:00</option>
+            </select>
+          </div>
+        </div>
+        <button class="form-btn" onclick="this.textContent='Turno solicitado ✓';this.style.opacity='.7';this.disabled=true">Solicitar turno</button>
+        <p class="form-note">Confirmamos por WhatsApp en menos de 2 horas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">ECA</div>
+        <div class="footer-logo-sub">Odontología & Cirugía</div>
+        <div class="footer-desc">Consulta odontológica y quirúrgica en Asunción, Paraguay. Atención de tarde, lunes a sábado. Sin lista de espera.</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Servicios</div>
+        <ul class="footer-links">
+          <li><a href="#">Cirugía Bucal</a></li>
+          <li><a href="#">Estética Dental</a></li>
+          <li><a href="#">Endodoncia</a></li>
+          <li><a href="#">Implantes</a></li>
+          <li><a href="#">Urgencias</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contacto</div>
+        <ul class="footer-links">
+          <li><a href="#">Ten. José Felix Lopez, Asunción</a></li>
+          <li><a href="#">+595 972 219 507</a></li>
+          <li><a href="#">Lun–Jue 15:30–20:00</a></li>
+          <li><a href="#">Vie 15:00–19:00</a></li>
+          <li><a href="#">Sáb 16:00–19:00</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 ECA Odontología y Cirugía · Asunción, Paraguay</span>
+      <a href="https://mldev-portfolio.vercel.app">Web por ML Dev</a>
+    </div>
+  </div>
+</div>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
